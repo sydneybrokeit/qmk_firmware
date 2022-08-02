@@ -81,6 +81,9 @@ A creative coder.
 | nz67ble         | 0xAA96    | 0xAA8B     | BLE                              | &check;           |
 | whitemouse69v2  | 0xAA96    | 0xAA8C     | F103, RGB                        | &check;           |
 | tg67            | 0xAA96    | 0xAA8D     | F103, RGB                        | &check;           |
+| wave75          | 0xAA96    | 0xAA8E     | F103                             | &check;           |
+| ID96            | 0xAA96    | 0xAA8F     | F103, RGB                        | &check;           |
+| ID96(IDOBAO96)  | 0x6964    | 0x0096     | F103, RGB                        | &check;           |
 
 
 ### Obsolete or Test keyboard for reference design only
