@@ -23,6 +23,7 @@ A creative coder.
 | zalicer2      | 0xAA96    | 0xAA09     | BLE 5.0 Dual mode, RGB                | &check;           |
 | yr32test      | 0xAA96    | 0xAA0A     | BLE, Full Functions                   | &check;           |
 | yrec_hhkb     | 0xAA96    | 0xAA0B     | BLE, Electro Capacitive               | &check;           |
+| yr6095        | 0xAA96    | 0xAA0C     | F103                                  | &check;           |
 
 
 ### Keyboards Completed with Y&R Studio Participation 
@@ -84,6 +85,7 @@ A creative coder.
 | wave75          | 0xAA96    | 0xAA8E     | F103                             | &check;           |
 | ID96            | 0xAA96    | 0xAA8F     | F103, RGB                        | &check;           |
 | ID96(IDOBAO96)  | 0x6964    | 0x0096     | F103, RGB                        | &check;           |
+| ID68            | 0xAA96    | 0xAA60     | F103, RGB                        | &check;           |
 
 
 ### Obsolete or Test keyboard for reference design only

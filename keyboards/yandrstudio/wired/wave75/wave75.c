@@ -22,6 +22,11 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
                 process_magic(GUI_TOG, record);
             }
             return false;
+        case KC_MACOS:
+            if (record->event.pressed) {
+                process_magic(CG_TOGG, record);
+            }
+            return false;
         case KC_MCTL:
             if (record->event.pressed) {
                 host_consumer_send(0x29F);
