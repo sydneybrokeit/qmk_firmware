@@ -17,24 +17,9 @@
 
 #include "config_common.h"
 
-/* key matrix size */
-#define MATRIX_ROWS 6
-#define MATRIX_COLS 17
-
-//                        0    1    2    3   4    5    6    7    8    9    10   11   12   13   14   15   16
-#define MATRIX_COL_PINS { B7,  A6,  B6, B5,  B4,  B3,  A5,  A10, B1,  B0,  A7,  A9,  B11, B10, B2,  A15, B15 }
-#define MATRIX_ROW_PINS { A3,  B9,  B8,  A4, C14, C13 }
-
-/* COL2ROW or ROW2COL */
-#define DIODE_DIRECTION COL2ROW
-
 #ifdef RGBLIGHT_ENABLE
-
-#    define RGB_DI_PIN A8
-#    define RGBLED_NUM 12
-#    define DRIVER_LED_TOTAL RGBLED_NUM
-#    define RGBLIGHT_LIMIT_VAL 180
-#    define RGBLIGHT_ANIMATIONS
-#    define RGBLIGHT_SLEEP
-
+#    define WS2812_PWM_DRIVER PWMD1  // default: PWMD2
+#    define WS2812_PWM_CHANNEL 1  // default: 2
+#    define WS2812_DMA_STREAM STM32_DMA1_STREAM1  // DMA Stream for TIMx_UP, see the respective reference manual for the appropriate values for your MCU.
+#    define WS2812_DMA_CHANNEL 1  // DMA Channel for TIMx_UP, see the respective reference manual for the appropriate values for your MCU.
 #endif
