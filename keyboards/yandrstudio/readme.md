@@ -86,6 +86,7 @@ A creative coder.
 | ID96            | 0xAA96    | 0xAA8F     | F103, RGB                        | &check;           |
 | ID96(IDOBAO96)  | 0x6964    | 0x0096     | F103, RGB                        | &check;           |
 | ID68            | 0xAA96    | 0xAA60     | F103, RGB                        | &check;           |
+| BL75            | 0xAA96    | 0xAA61     | F103, RGB                        | &check;           |
 
 
 ### Obsolete or Test keyboard for reference design only
