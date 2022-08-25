@@ -17,4 +17,4 @@
 
 #include "config_common.h"
 // #define FEE_PAGE_COUNT 4 // How many pages are used
-#define DYNAMIC_KEYMAP_LAYER_COUNT 2
+#define DYNAMIC_KEYMAP_LAYER_COUNT 3
