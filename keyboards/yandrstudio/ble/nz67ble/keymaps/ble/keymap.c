@@ -20,25 +20,6 @@
 #include "distributors.h"
 #include "usb_main.h"
 
-enum keyboard_keycodes {
-    BLE_TOG_EXT = SAFE_RANGE, // ble
-    USB_TOG_EXT,              // usb
-    BAU_TOG_EXT,              // if ble then usb, if usb then ble
-    BL_SW_0_EXT,              // ble id 0
-    BL_SW_1_EXT,
-    BL_SW_2_EXT,
-    BL_SW_3_EXT,
-    BL_SW_4_EXT,
-    BL_SW_5_EXT,
-    BL_SW_6_EXT,
-    BL_SW_7_EXT,
-    BLE_DEL_EXT,              // delete current ble bound
-    BLE_CLR_EXT,              // delete all ble bound
-    BLE_OFF_EXT,              // power off
-    NEW_SAFE_RANGE            // Important!
-};
-
-
 #define BLE_TOG     KC_F15  // 打开蓝牙
 #define USB_TOG     KC_F16  // 打开USB
 #define BAU_TOG     KC_F17  // 蓝牙和USB之间切换
@@ -185,7 +166,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS, KC_TRNS,          KC_TRNS, KC_TRNS, KC_TRNS)
 };
 
-#ifdef ENCODER_ENABLE
+#if defined(ENCODER_MAP_ENABLE) && defined(ENCODER_ENABLE)
+
+const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
+    [0]  = {ENCODER_CCW_CW(KC_VOLD, KC_VOLU)},
+    [1]  = {ENCODER_CCW_CW(RGB_VAD, RGB_VAI)},
+    [2]  = {ENCODER_CCW_CW(RGB_HUD, RGB_HUI)},
+    [3]  = {ENCODER_CCW_CW(RGB_RMOD, RGB_MOD)}
+};
+
+#endif
+
+#if !defined(ENCODER_MAP_ENABLE) && defined(ENCODER_ENABLE)
+
 bool encoder_update_user(uint8_t index, bool clockwise) {
     uint16_t keycode = 0;
     if (clockwise) {
@@ -200,4 +193,5 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     }
     return false;
 }
+
 #endif

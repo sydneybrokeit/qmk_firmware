@@ -188,7 +188,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-#if defined(KEYBOARD_yandrstudio_coder66ble_solder)
+#if defined(KEYBOARD_yandrstudio_ble_coder66ble_solder)
 	LAYOUT_solder(
         KC_ESC,  KC_1,    KC_2,   KC_3,    KC_4,  KC_5,  KC_6,  KC_7,  KC_8,  KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSLS, KC_BSPC,
         KC_TAB,  KC_Q,    KC_W,   KC_E,    KC_R,  KC_T,  KC_Y,  KC_U,  KC_I,  KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSLS,           KC_DEL,
@@ -241,81 +241,3 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		KC_TRNS, KC_TRNS, KC_TRNS,                        KC_TRNS,                               KC_TRNS,   KC_F14,              KC_TRNS,    KC_TRNS,   KC_TRNS)
 #endif
 };
-
-
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    switch(keycode) {
-#ifndef CUSTOM_DELAY_KEYCODE
-        case BLE_TOG:
-        case BLE_TOG_EXT:
-            if (record->event.pressed) {
-                switch_output_driver(0);
-            }
-            return false;
-        case USB_TOG:
-        case USB_TOG_EXT:
-            if (record->event.pressed) {
-                switch_output_driver(1);
-            }
-            return false;
-        case BAU_TOG:
-        case BAU_TOG_EXT:
-            if (record->event.pressed) {
-                if (where_to_send() == OUTPUT_USB) {
-                    switch_output_driver(0);
-                } else {
-                    switch_output_driver(1);
-                }
-            }
-            return false;
-        case BL_SW_0:
-        case BL_SW_1:
-        case BL_SW_2:
-        case BL_SW_3:
-            if (where_to_send() == OUTPUT_BLUETOOTH) {
-                if (record->event.pressed) {
-                    set_output(OUTPUT_BLUETOOTH);
-                    bluetooth_switch_one(keycode - BL_SW_0);
-                }
-            }
-            return false;
-        case BL_SW_0_EXT:
-        case BL_SW_1_EXT:
-        case BL_SW_2_EXT:
-        case BL_SW_3_EXT:
-        case BL_SW_4_EXT:
-        case BL_SW_5_EXT:
-        case BL_SW_6_EXT:
-        case BL_SW_7_EXT:
-            if (where_to_send() == OUTPUT_BLUETOOTH) {
-                if (record->event.pressed) {
-                    bluetooth_switch_one(keycode - BL_SW_0_EXT);
-                }
-            }
-            return false;
-        case BLE_DEL:
-        case BLE_DEL_EXT:
-            if (record->event.pressed) {
-                if (where_to_send() == OUTPUT_BLUETOOTH) {
-                    bluetooth_unpair_current();
-                }
-            }
-            return false;
-        case BLE_CLR:
-        case BLE_CLR_EXT:
-            if (record->event.pressed) {
-                if (where_to_send() == OUTPUT_BLUETOOTH) {
-                    bluetooth_unpair_all();
-                }
-            }
-            return false;
-        case BLE_OFF:
-        case BLE_OFF_EXT:
-            stop_one_lilnk(0);
-            return false;
-#endif
-        default:
-            return true;
-    }
-    return true;
-}

@@ -45,9 +45,6 @@
 
 #define TAP_CODE_DELAY 15
 
-#define USB_POLLING_INTERVAL_MS 1
-#define QMK_KEYS_PER_SCAN 4
-
 #define LED_NUM_LOCK_PIN     A3
 #define LED_CAPS_LOCK_PIN    A4
 #define LED_BAT_LOW_PIN      A5

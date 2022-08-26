@@ -1,7 +1,7 @@
 binary68 Ble
 ===
 
-A 104% keyboard with rgb.
+A tian 68key keyboard with rgb.
 This keyboard use 16mhz HSE and STM32F401 as MCU, NRF52810 as RF.
 
 Keyboard Maintainer: https://github.com/jiaxin96

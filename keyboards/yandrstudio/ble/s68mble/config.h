@@ -39,11 +39,6 @@
 // #define DEBUG_MATRIX_SCAN_RATE
 #define TAP_CODE_DELAY 15
 
-#define USB_POLLING_INTERVAL_MS 1
-#define QMK_KEYS_PER_SCAN 4
-
-
-
 // for ble
 // #define S68M_REV1
 // rgb switch

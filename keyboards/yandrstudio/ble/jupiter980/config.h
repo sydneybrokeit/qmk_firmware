@@ -57,10 +57,14 @@
 #ifdef RGBLIGHT_ENABLE
 
 #    define RGB_DI_PIN A7
-#    define RGBLED_NUM 22
+#    define RGBLED_NUM 27
 #    define RGBLIGHT_LIMIT_VAL 180
 #    define DRIVER_LED_TOTAL RGBLED_NUM
 #    define RGBLIGHT_ANIMATIONS
+#    define RGBLIGHT_LAYERS
+#    define RGBLIGHT_LAYER_BLINK
+#    define RGBLIGHT_LAYERS_OVERRIDE_RGB_OFF
+#    define RGBLIGHT_LAYERS_RETAIN_VAL
 
 
 #    define WS2812_PWM_DRIVER PWMD3  // default: PWMD2
@@ -90,6 +94,9 @@
 #   define DYNAMIC_KEYMAP_LAYER_COUNT 4
 #   define DYNAMIC_KEYMAP_EEPROM_MAX_ADDR 2048
 #endif
+
+// #define BleGetChannleEnable
+// #define BleLedEnable
 
 // for ble
 #define DISABLE_MAGIC_BOOTLOADER
