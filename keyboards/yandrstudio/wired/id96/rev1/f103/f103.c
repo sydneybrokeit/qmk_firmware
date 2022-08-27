@@ -15,6 +15,6 @@
  */
 #include QMK_KEYBOARD_H
 
-void board_init(void) {
-    AFIO->MAPR |= AFIO_MAPR_TIM2_REMAP_PARTIALREMAP1;
-}
+// void board_init(void) {
+//     AFIO->MAPR |= AFIO_MAPR_TIM2_REMAP_PARTIALREMAP1;
+// }

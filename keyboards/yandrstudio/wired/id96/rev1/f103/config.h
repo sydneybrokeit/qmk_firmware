@@ -20,14 +20,14 @@
 #ifdef RGB_MATRIX_ENABLE
 #    define WS2812_PWM_DRIVER PWMD2  // default: PWMD2
 #    define WS2812_PWM_CHANNEL 4  // default: 2
-#    define WS2812_DMA_STREAM STM32_DMA1_STREAM3  // DMA Stream for TIMx_UP, see the respective reference manual for the appropriate values for your MCU.
-#    define WS2812_DMA_CHANNEL 3  // DMA Channel for TIMx_UP, see the respective reference manual for the appropriate values for your MCU.
+#    define WS2812_DMA_STREAM STM32_DMA1_STREAM4  // DMA Stream for TIMx_UP, see the respective reference manual for the appropriate values for your MCU.
+#    define WS2812_DMA_CHANNEL 4  // DMA Channel for TIMx_UP, see the respective reference manual for the appropriate values for your MCU.
 #endif
 
 
 #ifdef RGBLIGHT_ENABLE
 #    define WS2812_PWM_DRIVER PWMD2  // default: PWMD2
 #    define WS2812_PWM_CHANNEL 4  // default: 2
-#    define WS2812_DMA_STREAM STM32_DMA1_STREAM3  // DMA Stream for TIMx_UP, see the respective reference manual for the appropriate values for your MCU.
-#    define WS2812_DMA_CHANNEL 3  // DMA Channel for TIMx_UP, see the respective reference manual for the appropriate values for your MCU.
+#    define WS2812_DMA_STREAM STM32_DMA1_STREAM4  // DMA Stream for TIMx_UP, see the respective reference manual for the appropriate values for your MCU.
+#    define WS2812_DMA_CHANNEL 4  // DMA Channel for TIMx_UP, see the respective reference manual for the appropriate values for your MCU.
 #endif
