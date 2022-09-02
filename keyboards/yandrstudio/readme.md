@@ -24,6 +24,7 @@ A creative coder.
 | yr32test      | 0xAA96    | 0xAA0A     | BLE, Full Functions                   | &check;           |
 | yrec_hhkb     | 0xAA96    | 0xAA0B     | BLE, Electro Capacitive               | &check;           |
 | yr6095        | 0xAA96    | 0xAA0C     | F103                                  | &check;           |
+| yr87          | 0xAA96    | 0xAA0D     | F103                                  | &check;           |
 
 
 ### Keyboards Completed with Y&R Studio Participation 
