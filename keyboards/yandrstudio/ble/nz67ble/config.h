@@ -72,12 +72,17 @@
 
 #endif
 
+// #define NO_UNDER_RGB
 
 /* RGN Matrix */
 #ifdef RGB_MATRIX_ENABLE
 
 #    define RGB_DI_PIN B5
+#   ifndef NO_UNDER_RGB
 #    define RGBLED_NUM 85
+#   else
+#    define RGBLED_NUM 67
+#endif
 #    define DRIVER_LED_TOTAL RGBLED_NUM
 
 #    define RGB_MATRIX_MAXIMUM_BRIGHTNESS 200
@@ -142,7 +147,11 @@
 #ifdef RGBLIGHT_ENABLE
 
 #    define RGB_DI_PIN B5
+#   ifndef NO_UNDER_RGB
 #    define RGBLED_NUM 85
+#   else
+#    define RGBLED_NUM 67
+#endif
 #    define RGBLIGHT_LIMIT_VAL 180
 #    define DRIVER_LED_TOTAL RGBLED_NUM
 #    define RGBLIGHT_DEFAULT_MODE RGBLIGHT_MODE_RAINBOW_MOOD
@@ -161,6 +170,7 @@
 #define TAP_HOLD_CAPS_DELAY 200
 
 // for ble
+// #define USE_MUILT_THREAD_FOR_BLE
 #define DISABLE_MAGIC_BOOTLOADER
 #define DISABLE_EEPROM_CLEAR
 

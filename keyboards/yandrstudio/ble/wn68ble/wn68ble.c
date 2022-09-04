@@ -29,7 +29,7 @@ led_config_t g_led_config = {
         {41,  42,  43,  44,  45,  46,  47,  48,  49,  50,  51,  52,  53,  54,  55,  56},
         {40,  39,  38,  37,  36,  35,  34,  33,  32,  31,  30,  29,  28,   NO_LED,  27,  26},
         {12,  13,  14,  15,  16,  17,  18,  19,  20,  21,  22,   NO_LED,  23,   NO_LED,  24,  25},
-        {11,  10,  9,   NO_LED,   NO_LED,  8,   NO_LED,   NO_LED,  7,  6,  5,  NO_LED,  NO_LED,  2,  1,  0}
+        {11,  10,  9,   NO_LED,   NO_LED,  8,   NO_LED,   NO_LED,  7,  NO_LED,  6,  NO_LED,  3,  2,  1,  0}
     },
     {
         {224,64},{209,64},{194,64},{179,64},{164,64},{149,64},{134,64},{119,64},              {75,64},              {30,64},{15,64},{0,64},
@@ -89,7 +89,7 @@ void eeconfig_init_kb(void) {
 }
 
 extern const rgb_matrix_driver_t rgb_matrix_driver;
-void                             keyboard_post_init_kb(void) {
+void keyboard_post_init_kb(void) {
     user_config.underground_rgb_sw = eeconfig_read_kb();
     rgb_matrix_reload_from_eeprom();
 }
@@ -98,56 +98,60 @@ void                             keyboard_post_init_kb(void) {
 
 #if defined(RGBLIGHT_ENABLE) && defined(BIU_BLE5_ENABLE)
 
-const rgblight_segment_t PROGMEM bt_conn[]           = RGBLIGHT_LAYER_SEGMENTS({0, 6, HSV_BLUE});   // 0
-const rgblight_segment_t PROGMEM bt_pair[]           = RGBLIGHT_LAYER_SEGMENTS({0, 6, HSV_BLUE});   // 1
-const rgblight_segment_t PROGMEM usb_pair[]          = RGBLIGHT_LAYER_SEGMENTS({0, 6, HSV_WHITE});  // 2
-const rgblight_segment_t PROGMEM my_capslock_layer[] = RGBLIGHT_LAYER_SEGMENTS({0, 6, HSV_RED});    // 3
-const rgblight_segment_t PROGMEM bat_10_layer[]      = RGBLIGHT_LAYER_SEGMENTS({0, 1, HSV_GREEN});  // 4
-const rgblight_segment_t PROGMEM bat_30_layer[]      = RGBLIGHT_LAYER_SEGMENTS({0, 2, HSV_GREEN});  // 5
-const rgblight_segment_t PROGMEM bat_50_layer[]      = RGBLIGHT_LAYER_SEGMENTS({0, 3, HSV_GREEN});  // 6
-const rgblight_segment_t PROGMEM bat_70_layer[]      = RGBLIGHT_LAYER_SEGMENTS({0, 4, HSV_GREEN});  // 7
-const rgblight_segment_t PROGMEM bat_80_layer[]      = RGBLIGHT_LAYER_SEGMENTS({0, 5, HSV_GREEN});  // 8
-const rgblight_segment_t PROGMEM bat_90_layer[]      = RGBLIGHT_LAYER_SEGMENTS({0, 6, HSV_GREEN});  // 9
-
-const rgblight_segment_t* const PROGMEM _rgb_layers[] = RGBLIGHT_LAYERS_LIST(bt_conn, bt_pair, usb_pair, my_capslock_layer, bat_10_layer, bat_30_layer, bat_50_layer, bat_70_layer, bat_80_layer, bat_90_layer);
-
 void keyboard_post_init_kb(void) {
-    rgblight_layers = _rgb_layers;
     rgblight_reload_from_eeprom();
 }
 
-bool ble_led_update_kb(uint8_t channle, uint8_t state) {
-    /*
-    _ble_channle:
-        BLE: 0-7
-        USB: 0xa
-        2G4: 0xb
-    _ble_state:
-        NRF_WORKING：1
-        NRF_ADVING_NO_WL：8
-        NRF_ADVING_WITH_WL：7
+// const rgblight_segment_t PROGMEM bt_conn[]           = RGBLIGHT_LAYER_SEGMENTS({0, 6, HSV_BLUE});   // 0
+// const rgblight_segment_t PROGMEM bt_pair[]           = RGBLIGHT_LAYER_SEGMENTS({0, 6, HSV_BLUE});   // 1
+// const rgblight_segment_t PROGMEM usb_pair[]          = RGBLIGHT_LAYER_SEGMENTS({0, 6, HSV_WHITE});  // 2
+// const rgblight_segment_t PROGMEM my_capslock_layer[] = RGBLIGHT_LAYER_SEGMENTS({0, 6, HSV_RED});    // 3
+// const rgblight_segment_t PROGMEM bat_10_layer[]      = RGBLIGHT_LAYER_SEGMENTS({0, 1, HSV_GREEN});  // 4
+// const rgblight_segment_t PROGMEM bat_30_layer[]      = RGBLIGHT_LAYER_SEGMENTS({0, 2, HSV_GREEN});  // 5
+// const rgblight_segment_t PROGMEM bat_50_layer[]      = RGBLIGHT_LAYER_SEGMENTS({0, 3, HSV_GREEN});  // 6
+// const rgblight_segment_t PROGMEM bat_70_layer[]      = RGBLIGHT_LAYER_SEGMENTS({0, 4, HSV_GREEN});  // 7
+// const rgblight_segment_t PROGMEM bat_80_layer[]      = RGBLIGHT_LAYER_SEGMENTS({0, 5, HSV_GREEN});  // 8
+// const rgblight_segment_t PROGMEM bat_90_layer[]      = RGBLIGHT_LAYER_SEGMENTS({0, 6, HSV_GREEN});  // 9
 
-        USB_ACTIVE: 0xA0
-        USB_DISCONNECTION：0xA1
-    */
-    if (channle == 0xa) {
-        if (state != 0xa0) {
-            rgblight_blink_layer_repeat(2, 500, 8);
-        }
-    } else if (channle <= 7) {
-        if (state == 7) {
-            rgblight_blink_layer_repeat(0, 500, 8);
-        } else if (state == 8) {
-            rgblight_blink_layer_repeat(1, 200, 20);
-        }
-    }
-    return true;
-}
+// const rgblight_segment_t* const PROGMEM _rgb_layers[] = RGBLIGHT_LAYERS_LIST(bt_conn, bt_pair, usb_pair, my_capslock_layer, bat_10_layer, bat_30_layer, bat_50_layer, bat_70_layer, bat_80_layer, bat_90_layer);
 
-bool led_update_kb(led_t led_state) {
-    rgblight_set_layer_state(3, led_state.caps_lock);
-    return true;
-}
+// void keyboard_post_init_kb(void) {
+//     rgblight_layers = _rgb_layers;
+//     rgblight_reload_from_eeprom();
+// }
+
+// bool ble_led_update_kb(uint8_t channle, uint8_t state) {
+//     /*
+//     _ble_channle:
+//         BLE: 0-7
+//         USB: 0xa
+//         2G4: 0xb
+//     _ble_state:
+//         NRF_WORKING：1
+//         NRF_ADVING_NO_WL：8
+//         NRF_ADVING_WITH_WL：7
+
+//         USB_ACTIVE: 0xA0
+//         USB_DISCONNECTION：0xA1
+//     */
+//     if (channle == 0xa) {
+//         if (state != 0xa0) {
+//             rgblight_blink_layer_repeat(2, 500, 8);
+//         }
+//     } else if (channle <= 7) {
+//         if (state == 7) {
+//             rgblight_blink_layer_repeat(0, 500, 8);
+//         } else if (state == 8) {
+//             rgblight_blink_layer_repeat(1, 200, 20);
+//         }
+//     }
+//     return true;
+// }
+
+// bool led_update_kb(led_t led_state) {
+//     rgblight_set_layer_state(3, led_state.caps_lock);
+//     return true;
+// }
 
 #endif
 
