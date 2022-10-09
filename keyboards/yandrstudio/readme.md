@@ -20,11 +20,11 @@ A creative coder.
 | nz64ble       | 0xAA96    | 0xAA06     | BLE 5.0 Dual mode                     | &check;           |
 | zn660         | 0xAA96    | 0xAA07     | 2.4G Single mode Split Keyboard       | &check;           |
 | nz60ble       | 0xAA96    | 0xAA08     | BLE 5.0 Dual mode                     | &check;           |
-| zalicer2      | 0xAA96    | 0xAA09     | BLE 5.0 Dual mode, RGB                | &check;           |
+| yrtower       | 0xAA96    | 0xAA09     | BLE 5.0 Dual mode, RGB, OLDE, Encoder | &check;           |
 | yr32test      | 0xAA96    | 0xAA0A     | BLE, Full Functions                   | &check;           |
 | yrec_hhkb     | 0xAA96    | 0xAA0B     | BLE, Electro Capacitive               | &check;           |
 | yr6095        | 0xAA96    | 0xAA0C     | F103                                  | &check;           |
-| yr87          | 0xAA96    | 0xAA0D     | F103                                  | &check;           |
+| yr80          | 0xAA96    | 0xAA0D     | F103                                  | &check;           |
 
 
 ### Keyboards Completed with Y&R Studio Participation 
@@ -89,6 +89,8 @@ A creative coder.
 | ID68            | 0xAA96    | 0xAA60     | F103, RGB                        | &check;           |
 | BL75            | 0xAA96    | 0xAA61     | F103, RGB                        | &check;           |
 | m83ble          | 0xAA96    | 0xAA62     | BLE 5.0 Dual mode, Hotswap, RGB  | &check;           |
+| sp60            | 0xAA96    | 0xAA63     | F103, RGB                        | &check;           |
+| soul75          | 0xAA96    | 0xAA64     | BLE 5.0 Dual mode, Hotswap, RGB  | &check;           |
 
 
 ### Obsolete or Test keyboard for reference design only
