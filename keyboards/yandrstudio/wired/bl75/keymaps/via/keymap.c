@@ -55,3 +55,15 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
     [3]  = {ENCODER_CCW_CW(RGB_RMOD, RGB_MOD)}
 };
 #endif
+
+
+#if !defined(ENCODER_MAP_ENABLE) && defined(ENCODER_ENABLE)
+bool encoder_update_user(uint8_t index, bool clockwise) {
+    if (clockwise) {
+        tap_code_delay(KC_VOLD, 10);
+    } else {
+        tap_code_delay(KC_VOLU, 10);
+    }
+    return false;
+}
+#endif

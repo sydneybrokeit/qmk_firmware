@@ -10,7 +10,6 @@ COMMAND_ENABLE = no         # Commands for debug and configuration
 NKRO_ENABLE = yes           # USB Nkey Rollover
 
 ENCODER_ENABLE = yes
-ENCODER_MAP_ENABLE = yes
 
 RGB_MATRIX_ENABLE = yes
 RGB_MATRIX_DRIVER = WS2812
