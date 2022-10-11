@@ -46,9 +46,8 @@
 #define TAP_CODE_DELAY 15
 
 #ifdef ENCODER_ENABLE
-#    define ENCODERS_PAD_A { B12 }
-#    define ENCODERS_PAD_B { B13 }
-#    define ENCODER_RESOLUTION 4
+#    define ENCODERS_PAD_A { B0 }
+#    define ENCODERS_PAD_B { B1 }
 #endif
 
 
