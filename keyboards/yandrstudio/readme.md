@@ -92,6 +92,7 @@ A creative coder.
 | sp60            | 0xAA96    | 0xAA63     | F103, RGB                        | &check;           |
 | soul75          | 0xAA96    | 0xAA64     | BLE 5.0 Dual mode, Hotswap, RGB  | &check;           |
 | suki68ble       | 0xAA96    | 0xAA65     | BLE 5.0 Dual mode, Hotswap, RGB  | &check;           |
+| tg75            | 0xAA96    | 0xAA66     | F103, RGB                        | &check;           |
 
 
 ### Obsolete or Test keyboard for reference design only

@@ -40,6 +40,9 @@
 // enable the nkro when using the VIA.
 #define FORCE_NKRO
 
+#define HOLD_ON_OTHER_KEY_PRESS
+#define TAP_HOLD_CAPS_DELAY 250
+
 // fix VIA RGB_light
 #define VIA_HAS_BROKEN_KEYCODES
 
