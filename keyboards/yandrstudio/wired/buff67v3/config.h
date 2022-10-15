@@ -35,19 +35,8 @@
 /* COL2ROW or ROW2COL */
 #define DIODE_DIRECTION COL2ROW
 
-#define TAP_CODE_DELAY 15
-
-// enable the nkro when using the VIA.
-#define FORCE_NKRO
-
-#define HOLD_ON_OTHER_KEY_PRESS
-#define TAP_HOLD_CAPS_DELAY 250
-
-// fix VIA RGB_light
-#define VIA_HAS_BROKEN_KEYCODES
-
 /* Set 0 if debouncing isn't needed */
-#define DEBOUNCE 20
+#define DEBOUNCE 8
 
 #ifdef RGBLIGHT_ENABLE
 
