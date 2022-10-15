@@ -1,4 +1,4 @@
-/* Copyright 2022 JasonRen(biu)
+/* Copyright 2020 QMK
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -13,13 +13,15 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 #pragma once
 
-#include "config_common.h"
+#include_next <mcuconf.h>
 
-#ifdef RGBLIGHT_ENABLE
-#    define WS2812_PWM_DRIVER PWMD3  // default: PWMD2
-#    define WS2812_PWM_CHANNEL 2  // default: 2
-#    define WS2812_DMA_STREAM STM32_DMA1_STREAM3  // DMA Stream for TIMx_UP, see the respective reference manual for the appropriate values for your MCU.
-#    define WS2812_DMA_CHANNEL 3  // DMA Channel for TIMx_UP, see the respective reference manual for the appropriate values for your MCU.
-#endif
+#undef STM32_PWM_USE_TIM3
+#define STM32_PWM_USE_TIM3 TRUE
+
+#undef STM32_PLLXTPRE
+#define STM32_PLLXTPRE STM32_PLLXTPRE_DIV2
+
+

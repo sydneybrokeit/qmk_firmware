@@ -47,7 +47,7 @@
 #define VIA_HAS_BROKEN_KEYCODES
 
 /* Set 0 if debouncing isn't needed */
-#define DEBOUNCE 5
+#define DEBOUNCE 20
 
 #ifdef RGBLIGHT_ENABLE
 

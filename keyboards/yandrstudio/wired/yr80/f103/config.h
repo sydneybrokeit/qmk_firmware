@@ -1,4 +1,4 @@
-/* Copyright 2022 JasonRen(biu)
+/* Copyright 2021 JasonRen(biu)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,11 +14,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
+
 #include "config_common.h"
 
-#ifdef ENCODER_ENABLE
-
-#   define ENCODERS_PAD_A { A9 }
-#   define ENCODERS_PAD_B { A10 }
-
+#ifdef RGBLIGHT_ENABLE
+#   define WS2812_PWM_DRIVER PWMD3  // default: PWMD2
+#   define WS2812_PWM_CHANNEL 2     // default: 2
+#   define WS2812_PWM_PAL_MODE 2
+#   define WS2812_DMA_STREAM STM32_DMA1_STREAM3
+#   define WS2812_DMA_CHANNEL 3
 #endif

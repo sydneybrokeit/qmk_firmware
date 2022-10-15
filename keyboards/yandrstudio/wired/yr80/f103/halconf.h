@@ -13,8 +13,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include QMK_KEYBOARD_H
 
-// void board_init(void) {
-//     AFIO->MAPR |= AFIO_MAPR_TIM3_REMAP_PARTIALREMAP;
-// }
+
+#pragma once
+#include_next <halconf.h>
+
+#undef HAL_USE_PWM
+#define HAL_USE_PWM    TRUE
+
