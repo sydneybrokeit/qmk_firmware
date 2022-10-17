@@ -1,4 +1,4 @@
-/* Copyright 2021 JasonRen(biu)
+/* Copyright 2022 JasonRen(biu)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -44,6 +44,7 @@
 #define DEBOUNCE 5
 
 #define TAP_CODE_DELAY 15
+
 
 #ifdef RGBLIGHT_ENABLE
 
