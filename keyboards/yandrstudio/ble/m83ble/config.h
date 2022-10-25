@@ -19,7 +19,7 @@
 
 /* USB Device descriptor parameter */
 #define VENDOR_ID       0xAA96
-#define PRODUCT_ID      0xAA61
+#define PRODUCT_ID      0xAA62
 #define DEVICE_VER      0x0001
 #define MANUFACTURER    JOJO_Y&R
 #define PRODUCT         m83ble
