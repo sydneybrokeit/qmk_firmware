@@ -94,6 +94,7 @@ A creative coder.
 | tg75            | 0xAA96    | 0xAA66     | F103, RGB                        | &check;           |
 | perce67         | 0xAA96    | 0xAA67     | BLE 5.0 Dual mode, Hotswap, RGB  | &check;           |
 | xxxx67          | 0xAA96    | 0xAA68     | F103, RGB                        | &check;           |
+| keit75          | 0xAA96    | 0xAA69     | F103, RGB                        | &check;           |
 
 
 ### Obsolete or Test keyboard for reference design only
