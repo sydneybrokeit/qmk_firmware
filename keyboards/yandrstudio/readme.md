@@ -95,6 +95,7 @@ A creative coder.
 | perce67         | 0xAA96    | 0xAA67     | BLE 5.0 Dual mode, Hotswap, RGB  | &check;           |
 | xxxx67          | 0xAA96    | 0xAA68     | F103, RGB                        | &check;           |
 | keit75          | 0xAA96    | 0xAA69     | F103, RGB                        | &check;           |
+| transition      | 0xAA96    | 0xAA70     | F103, RGB, Hotswap               | &check;           |
 
 
 ### Obsolete or Test keyboard for reference design only
