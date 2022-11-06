@@ -96,7 +96,7 @@ A creative coder.
 | point65         | 0xAA96    | 0xAA68     | F103, RGB                        | &check;           |
 | keit75          | 0xAA96    | 0xAA69     | F103, RGB                        | &check;           |
 | transition      | 0xAA96    | 0xAA70     | F103, RGB, Hotswap               | &check;           |
-| meteor80        | 0xAA96    | 0xAA71     | F103, RGB, Hotswap               | &check;           |
+| meteor80        | 0xAA96    | 0xAA71     | F103, RGB, Hotswap, Partially    | &check;           |
 
 
 ### Obsolete or Test keyboard for reference design only
